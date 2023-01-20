@@ -1,7 +1,7 @@
 import Button from "@/common/components/UI/button/Button";
-import Card from "@/common/components/UI/cards/Card";
 import { todoRepository } from "@/repositories";
 import Link from "next/link";
+import TodoCard from "./(components)/todo-card/TodoCard";
 
 export default async function Home() {
   const todos = await todoRepository.get();
@@ -9,12 +9,7 @@ export default async function Home() {
   return (
     <main className="w-full mt-10">
       {todos.map((todo) => (
-        <Card
-          key={todo.id}
-          className="w-full text-white p-6 rounded-md cursor-pointer text-xl bg-dark-gray"
-        >
-          <span className="card-text">{todo.text}</span>
-        </Card>
+        <TodoCard key={todo.id} todo={todo} />
       ))}
       <Link href="/new-todo">
         <Button className="bg-blue text-black text-xl py-4 px-6 mx-auto block mt-28 hover:bg-dark-gray hover:text-white duration-300 cursor-pointer">
