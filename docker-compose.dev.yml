@@ -1,0 +1,14 @@
+services:
+  todo-db:
+    image: mysql:latest
+    container_name: todo-db
+    command: --default-authentication-plugin=mysql_native_password
+    env_file:
+      - .env
+    volumes:
+      - todo-app:/var/lib/mysql
+    ports:
+      - "3306:3306"
+volumes:
+  todo-app:
+    driver: local
