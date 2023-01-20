@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,8 +7,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Priority {
+  High
+  Middle
+  Low
+}
+
 model Todo {
   id Int @default(autoincrement()) @id
   text String
+  priority Priority
   createdAt DateTime @default(now()) @map("created_at")
 }
