@@ -1,6 +1,6 @@
 import { PT_Sans } from "@next/font/google";
-import "../globals.css";
-import Header from "./Header";
+import Header from "./(components)/header/Header";
+import "./globals.css";
 
 const inter = PT_Sans({ subsets: ["latin"], display: "block", weight: "400" });
 
