@@ -1,7 +1,8 @@
 import classNames from "@/common/utils/classnames";
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-type Props = React.HTMLAttributes<HTMLButtonElement>;
+type Props = React.HTMLAttributes<HTMLButtonElement> &
+  ButtonHTMLAttributes<HTMLButtonElement>;
 
 function Button(props: Props) {
   const { className, ...otherProps } = props;

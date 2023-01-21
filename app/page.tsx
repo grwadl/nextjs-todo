@@ -8,9 +8,11 @@ export default async function Home() {
 
   return (
     <main className="w-full mt-10">
-      {todos.map((todo) => (
-        <TodoCard key={todo.id} todo={todo} />
-      ))}
+      <div className="todo-list flex flex-col gap-4">
+        {todos.map((todo) => (
+          <TodoCard key={todo.id} todo={todo} />
+        ))}
+      </div>
       <Link href="/new-todo">
         <Button className="bg-blue text-black text-xl py-4 px-6 mx-auto block mt-28 hover:bg-dark-gray hover:text-white duration-300 cursor-pointer">
           Add new
